@@ -12,7 +12,7 @@ Junior Web Developer
 Studio Onboarding & GitHub Workspace Setup
 
 ## Live Site
-GITHUB PAGES URL
+https://rentiewill.github.io/WebworksStudiosCourseProjects/
 
 ## Week 1 Requirements
 - I edited project files within the index.html using Visual Studio Code.
