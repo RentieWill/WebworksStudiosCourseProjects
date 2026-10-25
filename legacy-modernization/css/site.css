@@ -1,92 +1,338 @@
-/* Southtown Plant Co. legacy style sheet
-   Last updated: 08/17/2000
-*/
+/* Southtown Plant Co. — Week 2 legacy refactor
+   Fixed-width layout intentionally retained for the Week 3 responsive sprint. */
+
+/* 1. Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
 
 body {
-  margin-top: 18px;
-  margin-bottom: 18px;
+  margin: 0;
+  background: #e8e4d9;
+  color: #292d27;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
+  line-height: 1.55;
 }
 
-p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-}
-
-.intro {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 23px;
-  color: #4C5148;
-}
-
-h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  color: #315C3D;
-  font-size: 24px;
-  margin-bottom: 8px;
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 a {
-  color: #285B39;
+  color: #244c32;
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 a:hover {
-  color: #993300;
+  color: #173421;
 }
 
-.navcell {
-  background-color: #315C3D;
-  height: 34px;
+a:focus-visible {
+  outline: 3px solid #a14d18;
+  outline-offset: 3px;
 }
 
-.navcell a {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #FFFFFF;
-  font-size: 11px;
+/* 2. Fixed-width page frame */
+.site-shell {
+  width: 760px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.top-accent,
+.bottom-accent {
+  height: 12px;
+  background: #315c3d;
+}
+
+.site-header {
+  min-height: 110px;
+  padding: 10px 20px;
+  overflow: hidden;
+}
+
+.brand {
+  float: left;
+  width: 270px;
+}
+
+.brand img {
+  width: 250px;
+  height: 90px;
+}
+
+.contact-summary {
+  float: right;
+  width: 430px;
+  padding-top: 22px;
+  text-align: right;
+  font-size: 13px;
+}
+
+.contact-summary p {
+  margin: 0 0 3px;
+}
+
+/* 3. Navigation */
+.primary-nav {
+  margin: 0 20px;
+  border: 1px solid #d6d0bd;
+  background: #315c3d;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.primary-nav a {
+  display: block;
+  float: left;
+  width: 119px;
+  padding: 10px 4px;
+  color: #fff;
   font-weight: bold;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
-.navcell a:hover {
-  color: #FFF3B8;
+.primary-nav a:hover,
+.primary-nav a:focus-visible {
+  background: #24482f;
+  color: #fff;
 }
 
-.photo {
-  border: 1px solid #9E9475;
+/* 4. Main introduction */
+main {
+  padding: 16px 20px 0;
 }
 
-.footertext {
+.hero {
+  min-height: 236px;
+  padding-bottom: 16px;
+  overflow: hidden;
+}
+
+.hero-copy {
+  float: left;
+  width: 400px;
+}
+
+.hero h1 {
+  margin: 0 0 12px;
+  color: #315c3d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.intro {
+  margin: 0 0 14px;
+  font-size: 15px;
+}
+
+.special {
+  padding: 9px 12px;
+  background: #f4eac8;
+  border-left: 4px solid #315c3d;
+}
+
+.special p {
+  margin: 0;
+}
+
+.patio-photo {
+  float: right;
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.hero-link {
+  margin: 12px 0 0;
+  font-weight: bold;
+}
+
+.section-rule {
+  height: 4px;
+  margin: 0 0 18px;
+  background: #315c3d;
+}
+
+/* 5. Plant cards */
+h2 {
+  margin: 0 0 8px;
+  color: #315c3d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+h3 {
+  margin: 0 0 7px;
+  color: #315c3d;
+  font-size: 15px;
+  line-height: 1.3;
+}
+
+.plants-section > p {
+  margin: 0 0 14px;
+}
+
+.plant-list {
+  overflow: hidden;
+  margin: 0 -5px 24px;
+}
+
+.plant-card {
+  float: left;
+  width: 230px;
+  min-height: 132px;
+  margin: 0 5px;
+  padding: 14px 12px;
+  background: #f6f0da;
+  border-top: 3px solid #c8be9d;
+}
+
+.plant-card p {
+  margin: 0 0 10px;
+}
+
+.plant-card .best-for {
+  font-size: 12px;
+}
+
+/* 6. Secondary content columns */
+.content-columns {
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.quick-links {
+  float: left;
+  width: 190px;
+  padding: 14px;
+  background: #efe7ce;
+}
+
+.quick-links h2 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  color: #666666;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
-.footertext a {
+.quick-links ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.quick-links li {
+  margin: 0 0 10px;
+}
+
+.main-details {
+  float: right;
+  width: 510px;
+}
+
+.main-details section {
+  margin-bottom: 22px;
+}
+
+.service-item {
+  padding: 0 0 12px;
+  border-bottom: 1px solid #c8be9d;
+}
+
+.service-item + .service-item {
+  padding-top: 12px;
+}
+
+.service-item p,
+.about-content p {
+  margin: 0 0 10px;
+}
+
+.service-item:last-child {
+  border-bottom: 0;
+}
+
+.about-content {
+  overflow: hidden;
+}
+
+.about-content img {
+  float: left;
+  width: 170px;
+  height: 130px;
+  margin: 0 14px 8px 0;
+  object-fit: cover;
+}
+
+/* 7. Visit panel and footer */
+.visit-panel {
+  overflow: hidden;
+  padding: 16px 18px;
+  background: #f4eac8;
+}
+
+.visit-panel > div {
+  float: left;
+  width: 50%;
+}
+
+.visit-panel h2 {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
 
-/* old notes
-.green { color: #315C3D; }
-*/
-
-td {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+.visit-panel p {
+  margin: 0;
 }
 
-/* duplicate link rules from later update */
-a:link {
-  color: #285B39;
+address {
+  font-style: normal;
 }
 
-a:visited {
-  color: #6C4E32;
+.site-footer {
+  padding: 18px 12px 16px;
+  color: #45483f;
+  font-size: 12px;
+  text-align: center;
 }
 
-a:active {
-  color: #993300;
+.site-footer nav a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.site-footer p {
+  margin: 12px 0 0;
+}
+
+.site-footer .legacy-note {
+  color: #55594f;
+  font-style: italic;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .site-shell {
+    margin: 0;
+  }
+
+  a {
+    color: #000;
+  }
 }
