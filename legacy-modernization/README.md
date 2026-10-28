@@ -19,10 +19,5 @@ This is the next step in the same legacy-modernization project from Week 2. I ke
 - **Media:** images and video/iframe elements are limited to their container width; images keep their aspect ratio unless a cropped presentation is needed.
 - **Breakpoints:** `46rem` stacks the hero and secondary columns when they become cramped. `30rem` tightens spacing and stacks visit information and the about row on very narrow screens. These values should be checked by resizing the browser, including between the breakpoints.
 
-## Live site
-
-https://rentiewill.github.io/webworks-studio/legacy-modernization/
-
-
 ## Project link for Canvas:
-https://github.com/RentieWill/webworks-studio/tree/main/legacy-modernization
+https://github.com/RentieWill/WebworksStudiosCourseProjects/tree/main/legacy-modernization
