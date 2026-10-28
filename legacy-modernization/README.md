@@ -1,37 +1,28 @@
-# Southtown Plant Co. — Week 2 Inherited Client Site
+# Southtown Plant Co. — Legacy Website Modernization
 
-## Scenario
-WebWorks Studio has inherited this small-business website from a previous developer.
+## Sprint 2: Responsive Overhaul
 
-The site is functional, but the underlying front-end code reflects practices common in older websites. Your assignment is to modernize the code while preserving the client's content and general visual identity.
+This is the next step in the same legacy-modernization project from Week 2. I kept the existing page content and semantic sections, then updated the CSS so the page can adjust to different screen sizes instead of depending on a fixed 760px-wide layout.
 
-### What Changed and Why
+## Responsive decisions (Problems,Solutions, Why)
 
-- **Changed:** Replaced malformed legacy markup and presentational font tags with semantic page regions, navigation, sections, articles, and a logical heading hierarchy. **Why:** The document is easier to understand, navigate with assistive technology, and maintain.
-- **Changed:** Moved typography, colors, spacing, and layout presentation into an organized stylesheet. **Why:** Related rules are grouped together and visual adjustments can be made without editing presentation.
-- **Changed:** Added descriptive image alternatives, clearer navigation labels, telephone links, and visible keyboard focus styles. **Why:** These changes strengthen basic accessibility and make common actions easier to identify and use.
+1. **Problem:** The page wrapper had a fixed width, so a smaller screen could have horizontal overflow and a wide screen had too much unused space. **Solution:** The wrapper now uses a fluid width with a maximum width, and the main spacing uses flexible values. **Why:** The page can shrink to fit the screen while still staying readable on larger displays.
 
-## What I Intentionally Did Not Change
+2. **Problem:** The plant cards needed to fit different available widths without forcing the same number of columns everywhere. **Solution:** I used CSS Grid with `auto-fit` and `minmax()` for the plant cards. **Why:** Cards can wrap into fewer columns as the space gets tighter and add columns when there is room.
 
-The page remains a fixed-width, 760-pixel layout. I did not rebuild the overall layout with Grid or Flexbox, add responsive breakpoints, or redesign the brand. This preserves the Week 2 sprint boundary.
+3. **Problem:** The hero and the quick-links/details area become cramped when their side-by-side content no longer fits. **Solution:** I used Grid for those content relationships and added a breakpoint to stack them. I also used Flexbox for the header, navigation links, and the about image/text row. **Why:** Grid handles the larger page relationships, while Flexbox keeps items aligned and lets navigation wrap without needing a JavaScript menu.
 
-## What's Next
+## Layout choices
 
-In Week 3, I plan to address horizontal overflow on narrow screens, reflow the fixed-width columns and plant cards, resizing images, and navigating for smaller screens.
+- **Grid:** hero, plant cards, quick-links/details columns, and visit information.
+- **Flexbox:** header, main navigation, footer navigation, and the about image/text row.
+- **Media:** images and video/iframe elements are limited to their container width; images keep their aspect ratio unless a cropped presentation is needed.
+- **Breakpoints:** `46rem` stacks the hero and secondary columns when they become cramped. `30rem` tightens spacing and stacks visit information and the about row on very narrow screens. These values should be checked by resizing the browser, including between the breakpoints.
 
-## Important
-The inherited site is intentionally **not responsive**.
+## Live site
 
-Do not simply redesign the site from scratch. Refactor it according to the requirements in the Week 2 Canvas assignment.
+https://rentiewill.github.io/webworks-studio/legacy-modernization/
 
 
-## Site Link
-https://github.com/RentieWill/WebworksStudiosCourseProjects/tree/main/legacy-modernization
-
-## My Goal
-Make the code easier for another developer to understand, maintain, and extend.
-
-Refer to the Canvas assignment for all required technical work, GitHub workflow, and submission directions.
-
-## Tested AT:
-https://jigsaw.w3.org/css-validator/
+## Project link for Canvas:
+https://github.com/RentieWill/webworks-studio/tree/main/legacy-modernization

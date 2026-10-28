@@ -1,338 +1,162 @@
-/* Southtown Plant Co. — Week 2 legacy refactor
-   Fixed-width layout intentionally retained for the Week 3 responsive sprint. */
+/* Southtown Plant Co. — Sprint 2 responsive overhaul
+   Flexible-first layout, with structural changes only when content needs them. */
 
-/* 1. Base styles */
-* {
-  box-sizing: border-box;
-}
-
-html {
+:root {
   color-scheme: light;
-  scroll-behavior: smooth;
+  --green: #315c3d;
+  --green-dark: #24482f;
+  --ink: #292d27;
+  --paper: #fff;
+  --sand: #f4eac8;
+  --line: #c8be9d;
 }
 
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 1rem; }
 body {
   margin: 0;
   background: #e8e4d9;
-  color: #292d27;
+  color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  line-height: 1.55;
+  font-size: 1rem;
+  line-height: 1.6;
 }
+img, picture, video, iframe { display: block; max-width: 100%; }
+img { height: auto; }
+a { color: #244c32; text-underline-offset: .18em; overflow-wrap: anywhere; }
+a:hover { color: #173421; }
+a:focus-visible, button:focus-visible { outline: 3px solid #a14d18; outline-offset: 3px; }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-a {
-  color: #244c32;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-a:hover {
-  color: #173421;
-}
-
-a:focus-visible {
-  outline: 3px solid #a14d18;
-  outline-offset: 3px;
-}
-
-/* 2. Fixed-width page frame */
 .site-shell {
-  width: 760px;
-  margin: 0 auto;
-  background: #fff;
+  margin-inline: auto;
+  background: var(--paper);
+  box-shadow: 0 0 1.5rem rgb(35 40 30 / 8%);
 }
-
-.top-accent,
-.bottom-accent {
-  height: 12px;
-  background: #315c3d;
-}
-
+/* Use a valid max-width token rather than a fixed page width. */
+.site-shell { width: min(100%, 76rem); }
+.top-accent, .bottom-accent { height: .75rem; background: var(--green); }
 .site-header {
-  min-height: 110px;
-  padding: 10px 20px;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: clamp(1rem, 3vw, 1.75rem) clamp(1rem, 3.5vw, 2.5rem);
 }
+.brand { display: block; flex: 0 1 16rem; min-width: 0; }
+.brand img { width: 100%; max-width: 15.625rem; height: auto; }
+.contact-summary { flex: 0 1 26rem; text-align: right; font-size: .9rem; }
+.contact-summary p { margin: 0 0 .2rem; }
 
-.brand {
-  float: left;
-  width: 270px;
-}
-
-.brand img {
-  width: 250px;
-  height: 90px;
-}
-
-.contact-summary {
-  float: right;
-  width: 430px;
-  padding-top: 22px;
-  text-align: right;
-  font-size: 13px;
-}
-
-.contact-summary p {
-  margin: 0 0 3px;
-}
-
-/* 3. Navigation */
 .primary-nav {
-  margin: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .15rem;
+  margin-inline: clamp(.75rem, 2.5vw, 2rem);
   border: 1px solid #d6d0bd;
-  background: #315c3d;
-  font-size: 12px;
-  text-align: center;
-  overflow: hidden;
+  background: var(--green);
 }
-
 .primary-nav a {
-  display: block;
-  float: left;
-  width: 119px;
-  padding: 10px 4px;
+  flex: 1 1 auto;
+  min-width: max-content;
+  padding: .7rem .85rem;
   color: #fff;
-  font-weight: bold;
+  font-size: .8rem;
+  font-weight: 700;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 }
-
-.primary-nav a:hover,
-.primary-nav a:focus-visible {
-  background: #24482f;
-  color: #fff;
-}
-
-/* 4. Main introduction */
-main {
-  padding: 16px 20px 0;
-}
-
+.primary-nav a:hover, .primary-nav a:focus-visible { background: var(--green-dark); color: #fff; }
+main { padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 3.5vw, 2.5rem) 0; }
 .hero {
-  min-height: 236px;
-  padding-bottom: 16px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(14rem, .9fr);
+  align-items: start;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding-bottom: 1.25rem;
 }
-
-.hero-copy {
-  float: left;
-  width: 400px;
-}
-
+.hero-copy { min-width: 0; }
 .hero h1 {
-  margin: 0 0 12px;
-  color: #315c3d;
+  margin: 0 0 .75rem;
+  color: var(--green);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 30px;
-  line-height: 1.2;
+  font-size: clamp(1.8rem, 3.3vw, 2.65rem);
+  line-height: 1.15;
+  text-wrap: balance;
 }
-
-.intro {
-  margin: 0 0 14px;
-  font-size: 15px;
-}
-
-.special {
-  padding: 9px 12px;
-  background: #f4eac8;
-  border-left: 4px solid #315c3d;
-}
-
-.special p {
-  margin: 0;
-}
-
-.patio-photo {
-  float: right;
-  width: 300px;
-  height: 220px;
-  object-fit: cover;
-}
-
-.hero-link {
-  margin: 12px 0 0;
-  font-weight: bold;
-}
-
-.section-rule {
-  height: 4px;
-  margin: 0 0 18px;
-  background: #315c3d;
-}
-
-/* 5. Plant cards */
-h2 {
-  margin: 0 0 8px;
-  color: #315c3d;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 22px;
-  line-height: 1.25;
-}
-
-h3 {
-  margin: 0 0 7px;
-  color: #315c3d;
-  font-size: 15px;
-  line-height: 1.3;
-}
-
-.plants-section > p {
-  margin: 0 0 14px;
-}
-
+.intro { margin: 0 0 1rem; font-size: 1.05rem; }
+.special { padding: .7rem .85rem; background: var(--sand); border-left: 4px solid var(--green); }
+.special p { margin: 0; }
+.patio-photo { width: 100%; aspect-ratio: 15 / 11; object-fit: cover; border-radius: .15rem; }
+.hero-link { margin: .9rem 0 0; font-weight: 700; }
+.section-rule { height: 4px; margin: 0 0 1.2rem; background: var(--green); }
+h2 { margin: 0 0 .5rem; color: var(--green); font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.35rem, 2.2vw, 1.75rem); line-height: 1.25; }
+h3 { margin: 0 0 .45rem; color: var(--green); font-size: 1rem; line-height: 1.3; }
+.plants-section > p { margin: 0 0 1rem; }
 .plant-list {
-  overflow: hidden;
-  margin: 0 -5px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: .75rem;
+  margin: 0 0 1.75rem;
 }
-
-.plant-card {
-  float: left;
-  width: 230px;
-  min-height: 132px;
-  margin: 0 5px;
-  padding: 14px 12px;
-  background: #f6f0da;
-  border-top: 3px solid #c8be9d;
-}
-
-.plant-card p {
-  margin: 0 0 10px;
-}
-
-.plant-card .best-for {
-  font-size: 12px;
-}
-
-/* 6. Secondary content columns */
+.plant-card { min-width: 0; padding: 1rem; background: #f6f0da; border-top: 3px solid var(--line); }
+.plant-card p { margin: 0 0 .65rem; }
+.plant-card .best-for { margin-bottom: 0; font-size: .85rem; }
 .content-columns {
-  overflow: hidden;
-  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: minmax(11rem, .7fr) minmax(0, 2fr);
+  align-items: start;
+  gap: clamp(1rem, 3vw, 2rem);
+  margin-bottom: 1.5rem;
 }
+.quick-links { min-width: 0; padding: 1rem; background: #efe7ce; }
+.quick-links h2 { font-family: Arial, Helvetica, sans-serif; font-size: 1rem; text-transform: uppercase; }
+.quick-links ul { margin: 0; padding-left: 1.2rem; }
+.quick-links li { margin-bottom: .6rem; }
+.main-details { min-width: 0; }
+.main-details section { margin-bottom: 1.4rem; }
+.service-item { padding-bottom: .8rem; border-bottom: 1px solid var(--line); }
+.service-item + .service-item { padding-top: .8rem; }
+.service-item p, .about-content p { margin: 0 0 .65rem; }
+.service-item:last-child { border-bottom: 0; }
+.about-content { display: flex; align-items: flex-start; gap: 1rem; }
+.about-content img { flex: 0 0 min(35%, 10.625rem); width: min(35%, 10.625rem); aspect-ratio: 17 / 13; object-fit: cover; }
+.about-content > div { min-width: 0; }
+.visit-panel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; padding: 1rem 1.25rem; background: var(--sand); }
+.visit-panel h2 { font-family: Arial, Helvetica, sans-serif; font-size: 1rem; text-transform: uppercase; }
+.visit-panel p { margin: 0; }
+address { font-style: normal; }
+.site-footer { padding: 1.2rem 1rem 1rem; color: #45483f; font-size: .8rem; text-align: center; }
+.site-footer nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem 1rem; }
+.site-footer p { margin: .75rem 0 0; }
+.site-footer .legacy-note { color: #55594f; font-style: italic; }
 
-.quick-links {
-  float: left;
-  width: 190px;
-  padding: 14px;
-  background: #efe7ce;
+/* At this width the two-column hero no longer gives its text enough measure. */
+@media (max-width: 46rem) {
+  .site-header { align-items: flex-start; flex-direction: column; }
+  .brand { flex-basis: auto; }
+  .brand img { max-width: 13rem; }
+  .contact-summary { text-align: left; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .patio-photo { max-height: 22rem; aspect-ratio: 16 / 9; }
+  .content-columns { grid-template-columns: minmax(0, 1fr); }
+  .quick-links ul { columns: 2; column-gap: 2rem; }
 }
-
-.quick-links h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  text-transform: uppercase;
+/* Small screens need less outer padding and vertically stacked visit details. */
+@media (max-width: 30rem) {
+  body { font-size: .95rem; }
+  .primary-nav { margin-inline: .5rem; justify-content: stretch; }
+  .primary-nav a { flex: 1 1 40%; padding: .7rem .45rem; }
+  main { padding-inline: .9rem; }
+  .visit-panel { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .about-content { flex-direction: column; }
+  .about-content img { width: min(100%, 17rem); flex-basis: auto; }
+  .quick-links ul { columns: 1; }
 }
-
-.quick-links ul {
-  margin: 0;
-  padding-left: 18px;
-}
-
-.quick-links li {
-  margin: 0 0 10px;
-}
-
-.main-details {
-  float: right;
-  width: 510px;
-}
-
-.main-details section {
-  margin-bottom: 22px;
-}
-
-.service-item {
-  padding: 0 0 12px;
-  border-bottom: 1px solid #c8be9d;
-}
-
-.service-item + .service-item {
-  padding-top: 12px;
-}
-
-.service-item p,
-.about-content p {
-  margin: 0 0 10px;
-}
-
-.service-item:last-child {
-  border-bottom: 0;
-}
-
-.about-content {
-  overflow: hidden;
-}
-
-.about-content img {
-  float: left;
-  width: 170px;
-  height: 130px;
-  margin: 0 14px 8px 0;
-  object-fit: cover;
-}
-
-/* 7. Visit panel and footer */
-.visit-panel {
-  overflow: hidden;
-  padding: 16px 18px;
-  background: #f4eac8;
-}
-
-.visit-panel > div {
-  float: left;
-  width: 50%;
-}
-
-.visit-panel h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  text-transform: uppercase;
-}
-
-.visit-panel p {
-  margin: 0;
-}
-
-address {
-  font-style: normal;
-}
-
-.site-footer {
-  padding: 18px 12px 16px;
-  color: #45483f;
-  font-size: 12px;
-  text-align: center;
-}
-
-.site-footer nav a {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.site-footer p {
-  margin: 12px 0 0;
-}
-
-.site-footer .legacy-note {
-  color: #55594f;
-  font-style: italic;
-}
-
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
-  body {
-    background: #fff;
-  }
-
-  .site-shell {
-    margin: 0;
-  }
-
-  a {
-    color: #000;
-  }
+  body { background: #fff; }
+  .site-shell { width: 100%; margin: 0; box-shadow: none; }
+  a { color: #000; }
 }
