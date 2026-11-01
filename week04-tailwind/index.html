@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Approachable small-batch coffee roasted in the Texas Hill Country.">
+  <title>Hill &amp; Hollow Coffee | Small-Batch Roasters</title>
+  <!-- Tailwind Play CDN: for this instructional sprint only -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-[#faf7f2] text-[#2f241f] antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:shadow-lg">Skip to main content</a>
+
+  <header class="bg-[#2f241f] text-[#fffaf4]">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+      <a href="index.html" class="w-fit text-xl font-bold tracking-wide sm:text-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e6c7a7]">Hill &amp; Hollow Coffee</a>
+      <nav aria-label="Primary navigation">
+        <ul class="flex flex-wrap gap-5 text-sm font-medium sm:gap-8 sm:text-base">
+          <li><a class="rounded-sm hover:text-[#e6c7a7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e6c7a7]" href="#coffee">Coffee</a></li>
+          <li><a class="rounded-sm hover:text-[#e6c7a7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e6c7a7]" href="#story">Our Story</a></li>
+          <li><a class="rounded-sm hover:text-[#e6c7a7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#e6c7a7]" href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="bg-[#eadcca]">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-2 lg:gap-16 lg:px-8">
+        <div class="max-w-2xl">
+          <p class="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#8b5e3c] sm:text-sm">Small-batch roasted in the Texas Hill Country</p>
+          <h1 class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">Good coffee. No complicated personality required.</h1>
+          <p class="mt-6 max-w-xl text-base leading-7 text-[#63564f] sm:text-lg">Hill &amp; Hollow Coffee roasts approachable, everyday coffee for people who want something better than grocery-store beans without needing a tasting-wheel vocabulary.</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a href="#coffee" class="inline-flex justify-center rounded-lg bg-[#6d4a38] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#543727] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d4a38]">Shop the roast lineup</a>
+            <a href="#story" class="inline-flex justify-center rounded-lg border-2 border-[#6d4a38] px-6 py-3 text-sm font-bold text-[#6d4a38] transition hover:bg-[#6d4a38] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d4a38]">Meet the roastery</a>
+          </div>
+        </div>
+        <div class="mx-auto w-full max-w-xl overflow-hidden rounded-2xl bg-[#d4b69a] shadow-md">
+          <img class="h-full w-full object-cover" src="images/coffee-bag.svg" alt="Illustration of a Hill and Hollow Coffee bag beside a ceramic mug">
+        </div>
+      </div>
+    </section>
+
+    <section id="coffee" class="scroll-mt-6 px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-[#8b5e3c]">Roast Lineup</p>
+        <h2 class="max-w-3xl text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">Three coffees. Zero existential crisis.</h2>
+        <div class="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+          <article class="flex h-full flex-col rounded-xl border border-[#ded6cc] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#8b5e3c]">Medium Roast</p><h3 class="mt-3 text-2xl font-bold">Front Porch</h3>
+            <p class="mt-3 flex-1 leading-7 text-[#63564f]">Balanced and easygoing with notes of milk chocolate, toasted almond, and brown sugar.</p>
+            <p class="mt-5 rounded-lg bg-[#f0e4d5] px-4 py-3 text-sm font-medium text-[#5d4738]">12 oz · Whole Bean</p>
+            <a class="mt-5 w-fit text-sm font-bold text-[#6d4a38] underline decoration-[#b99472] underline-offset-4 hover:text-[#3f2b20] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d4a38]" href="#visit">Find it at the shop</a>
+          </article>
+          <article class="flex h-full flex-col rounded-xl border border-[#ded6cc] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#8b5e3c]">Light Roast</p><h3 class="mt-3 text-2xl font-bold">Daybreak</h3>
+            <p class="mt-3 flex-1 leading-7 text-[#63564f]">Bright but approachable with citrus, honey, and a clean finish.</p>
+            <p class="mt-5 rounded-lg bg-[#f0e4d5] px-4 py-3 text-sm font-medium text-[#5d4738]">12 oz · Whole Bean</p>
+            <a class="mt-5 w-fit text-sm font-bold text-[#6d4a38] underline decoration-[#b99472] underline-offset-4 hover:text-[#3f2b20] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d4a38]" href="#visit">Find it at the shop</a>
+          </article>
+          <article class="flex h-full flex-col rounded-xl border border-[#ded6cc] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md md:col-span-2 lg:col-span-1">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#8b5e3c]">Dark Roast</p><h3 class="mt-3 text-2xl font-bold">Last Light</h3>
+            <p class="mt-3 flex-1 leading-7 text-[#63564f]">Deep and smooth with cocoa, caramelized sugar, and a little smoke.</p>
+            <p class="mt-5 rounded-lg bg-[#f0e4d5] px-4 py-3 text-sm font-medium text-[#5d4738]">12 oz · Whole Bean</p>
+            <a class="mt-5 w-fit text-sm font-bold text-[#6d4a38] underline decoration-[#b99472] underline-offset-4 hover:text-[#3f2b20] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d4a38]" href="#visit">Find it at the shop</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="scroll-mt-6 bg-[#f0e5d7] px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-9 lg:grid-cols-2 lg:gap-16">
+        <div class="overflow-hidden rounded-2xl bg-[#b99472] shadow-sm"><img class="h-full w-full object-cover" src="images/roastery.svg" alt="Illustration of a small coffee roastery with sacks, shelves, and a roasting machine"></div>
+        <div>
+          <p class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-[#8b5e3c]">Our Story</p>
+          <h2 class="text-3xl font-bold leading-tight tracking-tight sm:text-4xl">Roasted for normal mornings.</h2>
+          <p class="mt-5 leading-7 text-[#63564f]">Hill &amp; Hollow started with a simple idea: specialty coffee can be excellent without being intimidating.</p>
+          <p class="mt-4 leading-7 text-[#63564f]">We roast in small batches, keep the lineup focused, and explain coffee in language that sounds like something a human being might actually say.</p>
+          <ul class="mt-6 space-y-3 text-sm font-medium text-[#4e4038]">
+            <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-[#8b5e3c]"></span>Roasted weekly</li>
+            <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-[#8b5e3c]"></span>Small-batch production</li>
+            <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-[#8b5e3c]"></span>Approachable flavor profiles</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-4 py-16 sm:px-6 md:py-20 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-[#8b5e3c]">Why Hill &amp; Hollow?</p>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <article class="rounded-xl border border-[#ded6cc] bg-white p-6 shadow-sm"><h3 class="text-2xl font-bold">Fresh</h3><p class="mt-3 leading-7 text-[#63564f]">Roasted in small batches and dated clearly.</p></article>
+          <article class="rounded-xl border border-[#ded6cc] bg-white p-6 shadow-sm"><h3 class="text-2xl font-bold">Simple</h3><p class="mt-3 leading-7 text-[#63564f]">A focused lineup instead of 47 nearly identical bags.</p></article>
+          <article class="rounded-xl border border-[#ded6cc] bg-white p-6 shadow-sm"><h3 class="text-2xl font-bold">Local</h3><p class="mt-3 leading-7 text-[#63564f]">Roasted and packed in the Texas Hill Country.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit" class="scroll-mt-6 bg-[#2f241f] px-4 py-14 text-[#fffaf4] sm:px-6 md:py-16 lg:px-8">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
+        <div><p class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-[#e6c7a7]">Visit the Roastery</p><h2 class="text-3xl font-bold leading-tight sm:text-4xl">Come smell what we're roasting.</h2>
+          <p class="mt-5 max-w-xl leading-7 text-[#e4d8ce]">Stop by for fresh beans, simple brewing advice, and whatever is coming out of the roaster that day.</p></div>
+        <div class="rounded-xl border border-[#806858] bg-[#3b2d26] p-6">
+          <p class="text-lg font-bold">Hill &amp; Hollow Coffee</p><p class="mt-3 text-[#e4d8ce]">214 Market Road</p><p class="text-[#e4d8ce]">Boerne, TX 78006</p>
+          <p class="mt-3 text-sm text-[#e4d8ce]">Tuesday–Saturday · 8 a.m.–4 p.m.</p>
+          <p class="mt-4"><a class="font-semibold text-[#f0d2b2] underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#f0d2b2]" href="mailto:hello@example.com">hello@example.com</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#241b17] px-4 py-7 text-[#fffaf4] sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-bold">Hill &amp; Hollow Coffee</p><p class="text-sm text-[#d8c8bc]">Roasted in the Texas Hill Country.</p>
+    </div>
+  </footer>
+</body>
+</html>

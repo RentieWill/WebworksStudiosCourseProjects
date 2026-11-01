@@ -1,0 +1,17 @@
+{
+  "name": "week04-tailwind",
+  "version": "1.0.0",
+  "description": "This is my Week 4 responsive landing page for the Hill & Hollow Coffee client concept. I used the supplied starter files and design reference, and kept the original page content, links, semantic sections, and supplied images.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  }
+}
