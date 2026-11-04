@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cedar & Stone Home Services</title>
+
+  <!-- Bootstrap 5.3.3 CSS from the CDN (found this on the getbootstrap.com download page) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- my own css goes AFTER bootstrap so it can override stuff -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <!-- Component #1: navbar. Copied from the docs then changed the colors and text. -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-cedar sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#top">🌲 Cedar &amp; Stone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header id="top" class="hero text-white text-center d-flex align-items-center">
+    <div class="container py-5">
+      <span class="badge text-bg-warning mb-3">Serving the whole neighborhood!</span>
+      <h1 class="display-3 fw-bold">Your house called.<br>It wants some love.</h1>
+      <p class="lead mb-4">Repairs, landscaping, and stone work done by people who actually answer the phone.</p>
+      <a href="#contact" class="btn btn-warning btn-lg me-2">Get a Free Quote</a>
+      <!-- this button opens the modal further down -->
+      <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#promoModal">See today's deal</button>
+    </div>
+  </header>
+
+  <!-- Component #2: alert (dismissible, I like that you can just click the X and it goes away) -->
+  <div class="container mt-4">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Fall special!</strong> Book a gutter cleaning before Dec 1 and get 10% off.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+
+  <!-- ============ ROW TYPE 1: EQUAL CARDS ============ -->
+  <!-- Row #1: row-cols makes every card the same width automatically.
+       1 per row on phones, 2 on tablets, 3 on desktops. No math needed which is nice. -->
+  <section id="services" class="container py-5">
+    <h2 class="text-center mb-2">What We Do</h2>
+    <p class="text-center text-muted mb-5">Three things we're really good at (and a lot more we're okay at).</p>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <div class="icon-big">🔨</div>
+            <h3 class="card-title h5">Home Repair</h3>
+            <p class="card-text">Leaky faucet? Squeaky door? Mystery hole in the wall? We got you.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0 pb-3">
+            <span class="badge text-bg-success">Most popular</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <div class="icon-big">🌿</div>
+            <h3 class="card-title h5">Landscaping</h3>
+            <p class="card-text">Mowing, mulching, and making your yard look better than your neighbor's.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0 pb-3">
+            <span class="badge text-bg-primary">Seasonal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm text-center">
+          <div class="card-body">
+            <div class="icon-big">🪨</div>
+            <h3 class="card-title h5">Stone &amp; Patio Work</h3>
+            <p class="card-text">Walkways, fire pits, retaining walls. Basically we play with big rocks for a living.</p>
+          </div>
+          <div class="card-footer bg-transparent border-0 pb-3">
+            <span class="badge text-bg-secondary">Big projects</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ROW TYPE 2: UNEVEN COLUMNS ============ -->
+  <!-- Row #2: this one uses col-md-8 and col-md-4 (adds up to 12). Wide column for the story,
+       skinny column for the sidebar. On phones they stack because of no col-* without md. -->
+  <section id="about" class="bg-sand py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-12 col-md-8">
+          <h2>About Us</h2>
+          <p>Cedar &amp; Stone started with two friends, one pickup truck, and a really questionable lawn mower. Since then we've grown into a full home services crew that helps people keep their homes in shape.</p>
+          <p>We believe in showing up on time, cleaning up after ourselves, and never saying "that should be fine" about something that is not fine.</p>
+          <!-- Component #3: progress bars -->
+          <h3 class="h6 mt-4">Customer happiness (self reported, but still)</h3>
+          <div class="progress mb-2" role="progressbar" aria-label="Happy customers" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: 98%">98%</div>
+          </div>
+          <div class="progress" role="progressbar" aria-label="Showed up on time" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-warning text-dark" style="width: 90%">Showed up on time 90%</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <!-- Component #4: list group in a sidebar -->
+          <div class="card shadow-sm">
+            <div class="card-header fw-bold">Quick Facts</div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between align-items-center">Years in business <span class="badge bg-cedar rounded-pill">12</span></li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">Crew members <span class="badge bg-cedar rounded-pill">9</span></li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">Trucks <span class="badge bg-cedar rounded-pill">4</span></li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">Rocks moved <span class="badge bg-cedar rounded-pill">lots</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROW TYPE 3: CENTERED + OFFSET ============ -->
+  <!-- Row #3: a centered row. justify-content-center and a skinny column so the quote sits in the middle.
+       Also tried the "offset" thing on the stats row below it. -->
+  <section class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <!-- Component #5: carousel for testimonials -->
+        <div id="reviews" class="carousel slide text-center" data-bs-ride="carousel">
+          <div class="carousel-inner p-4 rounded review-box">
+            <div class="carousel-item active">
+              <p class="fs-5 fst-italic">"They rebuilt my patio in two days and my dog approves."</p>
+              <p class="fw-bold mb-0">- Marcus T.</p>
+            </div>
+            <div class="carousel-item">
+              <p class="fs-5 fst-italic">"Super nice, super clean, and the price was exactly what they said."</p>
+              <p class="fw-bold mb-0">- Linda R.</p>
+            </div>
+            <div class="carousel-item">
+              <p class="fs-5 fst-italic">"10/10 would let them near my hedges again."</p>
+              <p class="fw-bold mb-0">- Dev P.</p>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#reviews" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#reviews" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row #4: offset row. Only 2 columns but pushed over with offset-md-2 so it's not just left-aligned.
+         Also changed the order on mobile with order-first / order-md-last just to see what happens. -->
+    <div class="row text-center mt-5 align-items-center">
+      <div class="col-6 col-md-3 offset-md-1 order-2 order-md-1">
+        <div class="stat">500+</div><small>Jobs done</small>
+      </div>
+      <div class="col-12 col-md-4 order-1 order-md-2 mb-3 mb-md-0">
+        <h3 class="h4">Numbers don't lie</h3>
+      </div>
+      <div class="col-6 col-md-3 order-3">
+        <div class="stat">4.9★</div><small>Avg. rating</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="bg-sand py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-center mb-4">Questions People Ask Us</h2>
+          <!-- Component #6: accordion -->
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1">Do you give free estimates?</button>
+              </h3>
+              <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Yep! Fill out the form below and we'll get back to you within one business day.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2">Are you insured?</button>
+              </h3>
+              <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Fully insured. Yes, even for the rock stuff.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3">Can I pick my start date?</button>
+              </h3>
+              <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">Usually, yes. Weather is the boss though, so we might have to move things around.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT FORM ============ -->
+  <!-- Row #5: the form uses nested columns inside a row (name + email side by side on desktop,
+       stacked on phone) -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center mb-4">Get Your Free Quote</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <form id="quoteForm" class="row g-3 needs-validation" novalidate>
+          <div class="col-md-6">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+            <div class="invalid-feedback">Please tell us your name!</div>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">We need a real email so we can reply.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="service" class="form-label">What do you need?</label>
+            <select id="service" class="form-select" required>
+              <option value="" selected disabled>Pick one...</option>
+              <option>Home Repair</option>
+              <option>Landscaping</option>
+              <option>Stone &amp; Patio Work</option>
+              <option>Something weird</option>
+            </select>
+            <div class="invalid-feedback">Pick a service please.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="date" class="form-label">Rough start date</label>
+            <input type="date" class="form-control" id="date">
+          </div>
+          <div class="col-12">
+            <label for="details" class="form-label">Tell us about the job</label>
+            <textarea class="form-control" id="details" rows="3"></textarea>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-cedar btn-lg">Send it!</button>
+          </div>
+        </form>
+        <!-- the success message gets shown by script.js -->
+        <div id="thanks" class="alert alert-success mt-3 d-none">Thanks! We got your request (not really, this is a class project 😄).</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-cedar text-white py-4">
+    <div class="container">
+      <div class="row text-center text-md-start align-items-center">
+        <div class="col-md-6">&copy; 2025 Cedar &amp; Stone Home Services</div>
+        <div class="col-md-6 text-md-end">Made with Bootstrap 5.3 and a lot of coffee ☕</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Component #7: modal (popup) -->
+  <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="promoTitle">🎉 Today's Deal</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Mention this page when you call and get <strong>$25 off</strong> your first job. Seriously, just say "the Bootstrap page."</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Maybe later</button>
+          <a href="#contact" class="btn btn-cedar" data-bs-dismiss="modal">Sign me up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS bundle (has Popper in it) - needed for navbar, modal, carousel, accordion -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

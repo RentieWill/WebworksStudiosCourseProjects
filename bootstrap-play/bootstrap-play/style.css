@@ -1,0 +1,44 @@
+/* my custom css - kept it small because Bootstrap does most of the work */
+
+:root {
+  --cedar: #6b3f2a;   /* brown-ish, like cedar */
+  --stone: #8a8d91;   /* gray, like stone */
+  --sand: #f3ece1;    /* light background */
+}
+
+body { font-family: system-ui, sans-serif; }
+
+.bg-cedar { background-color: var(--cedar) !important; }
+.bg-sand  { background-color: var(--sand); }
+
+/* made my own button color since bootstrap doesn't have brown */
+.btn-cedar {
+  background-color: var(--cedar);
+  border-color: var(--cedar);
+  color: white;
+}
+.btn-cedar:hover {
+  background-color: #52301f;
+  border-color: #52301f;
+  color: white;
+}
+
+/* hero uses a gradient since I don't have a photo */
+.hero {
+  min-height: 80vh;
+  background: linear-gradient(135deg, #3b2418, var(--cedar) 55%, var(--stone));
+}
+
+.icon-big { font-size: 3rem; }
+
+.review-box { background-color: var(--sand); }
+
+.stat {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--cedar);
+}
+
+/* little hover thing on the cards, wasn't in bootstrap */
+.card { transition: transform 0.2s; }
+.card:hover { transform: translateY(-5px); }
