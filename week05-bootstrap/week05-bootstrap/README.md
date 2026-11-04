@@ -1,36 +1,53 @@
-# Cedar & Stone Home Services — Week 5 Bootstrap Project
+# Cedar & Stone Home Services — Week 5 Bootstrap
 
 ## Project
 **Week 5 — Build with a System: Bootstrap**
 
-This page is for Cedar & Stone Home Services in San Antonio. I used the supplied content and images and built the layout with Bootstrap 5.3.8.
+This project is a responsive service page for Cedar & Stone Home Services. I used the supplied client content, images, and design reference, then built the page with Bootstrap 5.3.8.
 
-## Bootstrap decisions
 
-### 1. Framework Choice
-**Used:** Bootstrap's responsive grid and navbar.  
-**Why:** The container, row, and column classes made it quicker to put the hero and service sections into responsive layouts. The navbar also came with a working mobile collapse pattern, so I did not have to build that behavior from scratch.
+## Bootstrap Setup
+Bootstrap 5.3.8 CSS and the Bootstrap JavaScript bundle are connected in `index.html`. I kept the supplied CDN links and used the Bootstrap bundle for the responsive navigation menu.
 
-### 2. Adaptation
-**Used:** Custom brand colors, button colors, and warmer backgrounds in `css/custom.css`.  
-**Why:** Bootstrap's default blue buttons and plain white look did not match Cedar & Stone. I changed those parts to the supplied deep green, cedar, and cream colors while keeping the Bootstrap layout and components.
+## Required Bootstrap Work
 
-### 3. Professional Judgment
-**Used:** Bootstrap's navbar collapse and card components.  
-**Why:** These are common interface patterns that Bootstrap already handles well. Keeping them means less custom code to maintain and gives the page familiar keyboard and responsive behavior.
+### 1. Bootstrap Responsive Grid
+**Used:** Bootstrap containers, rows, and columns throughout the page.
+
+**Why:** The grid lets the content stack on smaller screens and sit in columns when there is more room. I used it for the hero, service cards, and other page sections.
+
+### 2. Responsive Navbar
+**Used:** A Bootstrap navbar with a collapsible menu, toggler button, and the required accessibility attributes.
+
+**Why:** It keeps the navigation organized on desktop and makes it fit smaller screens without taking up too much space. The Bootstrap collapse behavior also avoids needing to write custom JavaScript for the menu.
+
+### 3. Service Cards
+**Used:** Three Bootstrap cards for the service offerings.
+
+**Why:** Using the same card structure makes the services feel like one group. Each card includes its image, category, heading, description, and link, and the grid adjusts the number of columns based on screen width.
+
+## Bootstrap Utilities and Custom CSS
+I used Bootstrap utility classes for spacing, alignment, display, text, borders, and buttons. I kept `css/custom.css` focused on the Cedar & Stone colors, backgrounds, and a few details that were not covered by the Bootstrap defaults. I did not try to recreate Bootstrap styles in the custom stylesheet but I changed those parts to the deep green, cedar, and cream colors while keeping the Bootstrap layout and components.
+
+## Bootstrap Decisions
+
+### Decision 1
+**Used:** Bootstrap's responsive grid (`container`, `row`, and `col` classes).  
+**Why:** It gives the page a layout that adjusts to different screen sizes without needing a separate set of custom media-query layouts.
+
+### Decision 2
+**Used:** Bootstrap's responsive navbar and collapse component.  
+**Why:** It provides a familiar mobile menu pattern and handles the show-and-hide behavior with the supplied Bootstrap JavaScript bundle.
+
+### Decision 3
+**Used:** Bootstrap cards for the three service offerings.  
+**Why:** Cards give each service the same structure and help the three offerings line up consistently across desktop and mobile layouts.
 
 ## Bootstrap vs. Tailwind
-Bootstrap felt more like putting the page together with ready-made pieces. I used its grid, navbar, and cards, then added a little CSS for the Cedar & Stone colors. With Tailwind in Week 4, I used utility classes for most of the styling and had to make more of the component design decisions myself. I would choose Bootstrap when a project needs standard components quickly. I might choose Tailwind when I want more control over a unique layout or design.
-
-## Responsive and accessibility checks
-- The hero and about sections stack on small screens and use columns on larger screens.
-- Service cards stack on phones, then use two or three columns as space allows.
-- The mobile navigation uses Bootstrap's collapse component and includes its accessibility attributes.
-- Images have descriptive alternative text, the page uses semantic sections, and keyboard focus is visible.
+Bootstrap felt more like putting the page together with ready-made components. I could use its grid, navbar, and cards instead of creating those patterns mostly from utility classes like I did with Tailwind in Week 4. Tailwind gave me more freedom to shape each part, but I had to make more of the component decisions myself. I would choose Bootstrap when a project needs common components and responsive behavior quickly. I would choose Tailwind when the design needs more custom styling and control.
 
 ## Live Site
-Add the published GitHub Pages URL here after pushing the folder. Example:
-`https://rentiewill.github.io/webworks-studio/week05-bootstrap/`
+https://github.com/RentieWill/WebworksStudiosCourseProjects/tree/main/week05-bootstrap/week05-bootstrap
 
-## Local preview
-Open `index.html` in a browser or use the Live Server extension in Visual Studio Code. Bootstrap is loaded from its supplied CDN links, so an internet connection is needed for the framework styles and navbar behavior.
+## Final Reminder
+The goal was to use Bootstrap where it made sense, keep the Cedar & Stone design direction, and add only the custom CSS needed for the brand. 
