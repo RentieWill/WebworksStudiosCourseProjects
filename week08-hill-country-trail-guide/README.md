@@ -39,4 +39,4 @@ I kept the supplied semantic button, form controls, labels, required attributes,
 - Keyboard: The form can be completed with Tab and the native controls; submit with Enter when needed. Verified in the browser.
 - Console errors: The JavaScript syntax check passed with Node.js. 
 ## Live Site
-[Add your GitHub Pages URL here after publishing.]
+[](https://github.com/RentieWill/WebworksStudiosCourseProjects/tree/main/week08-hill-country-trail-guide)
