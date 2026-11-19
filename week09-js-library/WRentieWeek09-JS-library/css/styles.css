@@ -1,0 +1,216 @@
+/* WEBWORKS STUDIO — WEEK 9 STARTER
+   The starter is already designed and responsive.
+   Your task is library integration, not a site redesign.
+*/
+
+:root {
+  --ink: #172d3a;
+  --text: #2d414b;
+  --muted: #64767e;
+  --accent: #267b72;
+  --accent-dark: #1d625b;
+  --soft: #edf5f3;
+  --border: #cfdbde;
+  --surface: #ffffff;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--surface);
+  line-height: 1.6;
+}
+
+a { color: var(--accent-dark); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  padding: .75rem 1rem;
+}
+
+.skip-link:focus { left: 1rem; top: 1rem; }
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.narrow { max-width: 760px; }
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero {
+  padding: 5rem 0;
+  background: var(--soft);
+}
+
+.eyebrow,
+.project-type {
+  margin: 0 0 .5rem;
+  color: var(--accent-dark);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+h1 {
+  max-width: 800px;
+  margin: 0 0 1rem;
+  font-size: clamp(2.5rem, 7vw, 4.8rem);
+}
+
+h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+
+.lead,
+.section-intro {
+  max-width: 65ch;
+  font-size: 1.08rem;
+}
+
+.section { padding: 4rem 0; }
+.section-muted { background: #f5f8f8; }
+
+/* This is the STARTER layout.
+   You will replace the project collection's structural classes with Splide's
+   required component structure during the assignment.
+*/
+.projects-carousel { margin-top: 2rem; }
+.projects-carousel .splide__slide { height: auto; }
+.projects-carousel .project-card { height: 100%; }
+.projects-carousel .splide__arrow {
+  width: 2.6rem;
+  height: 2.6rem;
+  background: var(--ink);
+  opacity: 1;
+}
+.projects-carousel .splide__arrow svg { fill: #fff; }
+.projects-carousel .splide__arrow:disabled { opacity: .35; }
+.projects-carousel .splide__pagination { bottom: -2rem; }
+.projects-carousel .splide__pagination__page {
+  width: .65rem;
+  height: .65rem;
+  background: #8a9b9f;
+  opacity: 1;
+}
+.projects-carousel .splide__pagination__page.is-active {
+  background: var(--accent-dark);
+  transform: scale(1.15);
+}
+.projects-carousel .splide__arrow:focus-visible,
+.projects-carousel .splide__pagination__page:focus-visible {
+  outline: 3px solid #111;
+  outline-offset: 3px;
+}
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.project-image {
+  min-height: 180px;
+  background: linear-gradient(135deg, #d8e9e5, #7fb8ae);
+}
+
+.project-image-2 { background: linear-gradient(135deg, #d9e6ef, #7899b0); }
+.project-image-3 { background: linear-gradient(135deg, #e8e1d3, #b29b71); }
+.project-image-4 { background: linear-gradient(135deg, #e8dfe4, #a78396); }
+.project-image-5 { background: linear-gradient(135deg, #e4e0ef, #9586b1); }
+.project-image-6 { background: linear-gradient(135deg, #e7ead8, #9aa46d); }
+.project-image-1 { background: linear-gradient(135deg, #d8e9e5, #7fb8ae); }
+
+.project-content { padding: 1.25rem; }
+.project-content h3 { margin: .25rem 0 .6rem; }
+.project-content p { margin-top: 0; }
+
+/* Add any project-specific Splide integration styling below.
+   Do not hide navigation controls or visible focus.
+*/
+
+/* TODO 4: Add your carousel integration styles below this line. */
+
+
+.site-footer {
+  padding: 2rem 0;
+  background: var(--ink);
+  color: #fff;
+}
+
+.site-footer p { margin: .25rem 0; }
+
+@media (max-width: 620px) {
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .8rem;
+    padding-block: 1rem;
+  }
+
+  .nav-list { flex-wrap: wrap; }
+  .hero { padding: 3rem 0; }
+}
