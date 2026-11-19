@@ -94,7 +94,7 @@ Document approximately three meaningful decisions.
 
 # Live Site
 
-**GitHub Pages URL:** [Paste your live Week 9 URL here]
+**GitHub Pages URL:** (https://github.com/RentieWill/WebworksStudiosCourseProjects/tree/main/week09-js-library/WRentieWeek09-JS-library)
 
 ---
 
